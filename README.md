@@ -1,5 +1,4 @@
 # DataSift Push Database Schemas
-============
 
 A collection of example schemas for use with our push destinations
 
