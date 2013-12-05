@@ -1,8 +1,8 @@
-CREATE TABLE IF NOT EXISTS LINKS (
-  ID text NOT NULL,
-  CREATED_AT timestamp DEFAULT NULL,
-  URL text DEFAULT NULL,
-  TITLE text DEFAULT NULL,
-  HOPS text[] DEFAULT NULL,
-  DOMAIN text DEFAULT NULL
+CREATE TABLE IF NOT EXISTS links (
+  interaction_id text NOT NULL,
+  created_at timestamp DEFAULT NULL,
+  url text DEFAULT NULL,
+  title text DEFAULT NULL,
+  hops text[] DEFAULT NULL,
+  domain text DEFAULT NULL
 );

@@ -1,16 +1,16 @@
-CREATE TABLE IF NOT EXISTS SALIENCE_ENTITIES (
-  ID text NOT NULL,
-  CREATED_AT timestamp NOT NULL,
-  NAME text DEFAULT NULL,
-  ENTITY_TYPE text DEFAULT NULL,
-  SENTIMENT float DEFAULT NULL,
-  CONFIDENCE float DEFAULT NULL
+CREATE TABLE IF NOT EXISTS salience_entities (
+  interaction_id text NOT NULL,
+  created_at timestamp NOT NULL,
+  name text DEFAULT NULL,
+  entity_type text DEFAULT NULL,
+  sentiment float DEFAULT NULL,
+  confidence float DEFAULT NULL
 );
 
-CREATE TABLE IF NOT EXISTS SALIENCE_TOPICS (
-  ID text NOT NULL,
-  CREATED_AT timestamp DEFAULT NULL,
-  NAME text DEFAULT NULL,
-  HITS float DEFAULT NULL,
-  SCORE float DEFAULT NULL
+CREATE TABLE IF NOT EXISTS salience_topics (
+  interaction_id text NOT NULL,
+  created_at timestamp DEFAULT NULL,
+  name text DEFAULT NULL,
+  hits float DEFAULT NULL,
+  score float DEFAULT NULL
 );

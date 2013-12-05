@@ -1,5 +1,5 @@
 CREATE TABLE bitly (
-	id VARCHAR(64) PRIMARY KEY NOT NULL,
+	interaction_id VARCHAR(64) PRIMARY KEY NOT NULL,
 	created_at DATETIME NOT NULL,
 	cname VARCHAR(50),
 	url TEXT,

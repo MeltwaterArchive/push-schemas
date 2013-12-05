@@ -1,52 +1,52 @@
-CREATE TABLE IF NOT EXISTS INTERACTION (
-  ID text NOT NULL,
-  CREATED_AT timestamp NOT NULL,
-  CREATED_AT_UNIX INTEGER NOT NULL,
-  USERNAME text DEFAULT NULL,
-  IS_RETWEET SMALLINT DEFAULT NULL,
-  TWITTER_LANG text DEFAULT NULL,
-  FIRST_TAG text DEFAULT NULL,
-  PRIMARY KEY (ID)
+CREATE TABLE IF NOT EXISTS interaction (
+  interaction_id text NOT NULL,
+  created_at timestamp NOT NULL,
+  created_at_unix INTEGER NOT NULL,
+  username text DEFAULT NULL,
+  is_retweet SMALLINT DEFAULT NULL,
+  twitter_lang text DEFAULT NULL,
+  first_tag text DEFAULT NULL,
+  PRIMARY KEY (interaction_id)
 );
 
-CREATE TABLE IF NOT EXISTS RAW (
-  ID text NOT NULL,
-  SUBSCRIPTION_ID text NOT NULL,
-  CSDL_HASH text NOT NULL,
-  CSDL_HASH_TYPE text NOT NULL,
-  CREATED_AT timestamp NOT NULL,
-  INTERACTION_TYPE text NOT NULL,
-  DATA TEXT NOT NULL,
-  PRIMARY KEY (ID,SUBSCRIPTION_ID)
+CREATE TABLE IF NOT EXISTS raw (
+  interaction_id text NOT NULL,
+  subscription_id text NOT NULL,
+  csdl_hash text NOT NULL,
+  csdl_hash_type text NOT NULL,
+  created_at timestamp NOT NULL,
+  interaction_type text NOT NULL,
+  data TEXT NOT NULL,
+  PRIMARY KEY (interaction_id, subscription_id)
 );
 
-CREATE TABLE IF NOT EXISTS INTERACTION_TAGS (
-  ID text NOT NULL,
-  CREATED_AT timestamp DEFAULT NULL,
-  TAG_NAME text NOT NULL,
-  TAG_VALUE_FLOAT float DEFAULT NULL,
-  TAG_VALUE_ARRAY text DEFAULT NULL,
-  PRIMARY KEY (ID,TAG_NAME)
+CREATE TABLE IF NOT EXISTS interaction_tags (
+  interaction_id text NOT NULL,
+  created_at timestamp DEFAULT NULL,
+  tag_name text NOT NULL,
+  tag_value_float float DEFAULT NULL,
+  tag_value_array text DEFAULT NULL,
+  PRIMARY KEY (interaction_id, tag_name)
 );
 
 
-CREATE TABLE IF NOT EXISTS HASHTAGS (
-  INTERACTION_ID text NOT NULL,
-  INTERACTION_TYPE VARCHAR(64) NOT NULL,
-  CREATED_AT datetime NOT NULL,
-  HASHTAG VARCHAR(255) NULL
+CREATE TABLE IF NOT EXISTS hashtags (
+  interaction_id text NOT NULL,
+  interaction_type VARCHAR(64) NOT NULL,
+  created_at datetime NOT NULL,
+  hashtag VARCHAR(255) NULL
 );
-CREATE INDEX hashtags_interaction_id_idx ON HASHTAGS (INTERACTION_ID);
-CREATE INDEX hashtags_interaction_type_idx ON HASHTAGS (INTERACTION_TYPE);
-CREATE INDEX hashtags_created_at_idx ON HASHTAGS (CREATED_AT);
+CREATE INDEX hashtags_interaction_id_idx ON hashtags (interaction_id);
+CREATE INDEX hashtags_interaction_type_idx ON hashtags (interaction_type);
+CREATE INDEX hashtags_created_at_idx ON hashtags (created_at);
 
  
-CREATE TABLE IF NOT EXISTS MENTIONS (
-  INTERACTION_ID text NOT NULL,
-  INTERACTION_TYPE VARCHAR(64) NOT NULL,
-  CREATED_AT datetime NOT NULL,
-  MENTION VARCHAR(255) NULL
+CREATE TABLE IF NOT EXISTS mentions (
+  interaction_id text NOT NULL,
+  interaction_type VARCHAR(64) NOT NULL,
+  created_at datetime NOT NULL,
+  mention VARCHAR(255) NULL
 );
-CREATE INDEX mentions_interaction_id_idx ON MENTIONS (INTERACTION_ID);
-CREATE INDEX mentions_interaction_type_idx ON MENTIONS (INTERACTION_TYPE);
-CREATE INDEX mentions_created_at_idx ON MENTIONS (CREATED_AT);
+CREATE INDEX mentions_interaction_id_idx ON mentions (interaction_id);
+CREATE INDEX mentions_interaction_type_idx ON mentions (interaction_type);
+CREATE INDEX mentions_created_at_idx ON mentions (created_at);

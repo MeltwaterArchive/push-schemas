@@ -1,47 +1,47 @@
-CREATE TABLE IF NOT EXISTS INTERACTION (
-  ID text NOT NULL,
-  CREATED_AT timestamp NOT NULL,
-  CREATED_AT_UNIX INTEGER NOT NULL,
-  USERNAME text DEFAULT NULL,
-  IS_RETWEET SMALLINT DEFAULT NULL,
-  TWITTER_LANG text DEFAULT NULL,
-  FIRST_TAG text DEFAULT NULL,
-  PRIMARY KEY (ID)
+CREATE TABLE IF NOT EXISTS interaction (
+  interaction_id text NOT NULL,
+  created_at timestamp NOT NULL,
+  created_at_unix INTEGER NOT NULL,
+  username text DEFAULT NULL,
+  is_retweet SMALLINT DEFAULT NULL,
+  twitter_lang text DEFAULT NULL,
+  first_tag text DEFAULT NULL,
+  PRIMARY KEY (interaction_id)
 );
 
-CREATE TABLE IF NOT EXISTS RAW (
-  ID text NOT NULL,
-  SUBSCRIPTION_ID text NOT NULL,
-  CSDL_HASH text NOT NULL,
-  CSDL_HASH_TYPE text NOT NULL,
-  CREATED_AT timestamp NOT NULL,
-  INTERACTION_TYPE text NOT NULL,
-  DATA TEXT NOT NULL,
-  PRIMARY KEY (ID,SUBSCRIPTION_ID)
+CREATE TABLE IF NOT EXISTS raw (
+  interaction_id text NOT NULL,
+  subscription_id text NOT NULL,
+  csdl_hash text NOT NULL,
+  csdl_hash_type text NOT NULL,
+  created_at timestamp NOT NULL,
+  interaction_type text NOT NULL,
+  data TEXT NOT NULL,
+  PRIMARY KEY (interaction_id, subscription_id)
 );
 
-CREATE TABLE IF NOT EXISTS HASHTAGS (
-  INTERACTION_ID VARCHAR(64) NOT NULL,
-  INTERACTION_TYPE VARCHAR(64) NOT NULL,
-  CREATED_AT datetime NOT NULL,
-  HASHTAG VARCHAR(255) NULL,
-  INDEX hashtags_interaction_id_idx (INTERACTION_ID),
-  INDEX hashtags_interaction_type_idx (INTERACTION_TYPE),
-  INDEX hashtags_created_at_idx (CREATED_AT)
+CREATE TABLE IF NOT EXISTS hashtags (
+  interaction_id VARCHAR(64) NOT NULL,
+  interaction_type VARCHAR(64) NOT NULL,
+  created_at datetime NOT NULL,
+  hashtag VARCHAR(255) NULL,
+  INDEX hashtags_interaction_id_idx (interaction_id),
+  INDEX hashtags_interaction_type_idx (interaction_type),
+  INDEX hashtags_created_at_idx (created_at)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
  
  
-CREATE TABLE IF NOT EXISTS MENTIONS (
-  INTERACTION_ID VARCHAR(64) NOT NULL,
-  INTERACTION_TYPE VARCHAR(64) NOT NULL,
-  CREATED_AT datetime NOT NULL,
-  MENTION VARCHAR(255) NULL,
-  INDEX mentions_interaction_id_idx (INTERACTION_ID),
-  INDEX mentions_interaction_type_idx (INTERACTION_TYPE),
-  INDEX mentions_created_at_idx (CREATED_AT)
+CREATE TABLE IF NOT EXISTS mentions (
+  interaction_id VARCHAR(64) NOT NULL,
+  interaction_type VARCHAR(64) NOT NULL,
+  created_at datetime NOT NULL,
+  mention VARCHAR(255) NULL,
+  INDEX mentions_interaction_id_idx (interaction_id),
+  INDEX mentions_interaction_type_idx (interaction_type),
+  INDEX mentions_created_at_idx (created_at)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8

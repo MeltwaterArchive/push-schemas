@@ -14,7 +14,7 @@ We have split the schemas up by interaction type and augmentation. This is to ma
 
 Within each schema directory there are a couple of files
 
-* schema.ini: This is the format that you send to the DataSift API or front end website
+* mapping.ini: This is the format that you send to the DataSift API or front end website
 * mysql.sql: This is the file you can use to create the relevant tables in a MySQL database
 * postgresql.sql: This is the file you use to create the relevant tables in a PostgreSQL database
 
