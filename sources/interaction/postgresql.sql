@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS interaction (
-  interaction_id text NOT NULL,
+  interaction_id VARCHAR(64) NOT NULL,
   created_at timestamp NOT NULL,
   created_at_unix INTEGER NOT NULL,
   username text DEFAULT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS interaction (
 );
 
 CREATE TABLE IF NOT EXISTS raw (
-  interaction_id text NOT NULL,
+  interaction_id VARCHAR(64) NOT NULL,
   subscription_id text NOT NULL,
   csdl_hash text NOT NULL,
   csdl_hash_type text NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS raw (
 );
 
 CREATE TABLE IF NOT EXISTS interaction_tags (
-  interaction_id text NOT NULL,
+  interaction_id VARCHAR(64) NOT NULL,
   created_at timestamp DEFAULT NULL,
   tag_name text NOT NULL,
   tag_value_float float DEFAULT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS interaction_tags (
 
 
 CREATE TABLE IF NOT EXISTS hashtags (
-  interaction_id text NOT NULL,
+  interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at datetime NOT NULL,
   hashtag VARCHAR(255) NULL
@@ -42,7 +42,7 @@ CREATE INDEX hashtags_created_at_idx ON hashtags (created_at);
 
  
 CREATE TABLE IF NOT EXISTS mentions (
-  interaction_id text NOT NULL,
+  interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at datetime NOT NULL,
   mention VARCHAR(255) NULL

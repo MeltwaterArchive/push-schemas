@@ -17,5 +17,8 @@ CREATE TABLE bitly (
 	referring_domain TEXT,
 	referring_url TEXT,
 	user_agent TEXT
-);
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
 CREATE INDEX bitly_created_at ON bitly (created_at);
