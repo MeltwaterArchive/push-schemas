@@ -1,21 +1,21 @@
 CREATE TABLE bitly (
 	id VARCHAR(64) PRIMARY KEY NOT NULL,
 	created_at TIMESTAMP NOT NULL,
-	cname VARCHAR(50) NOT NULL,
-	url TEXT NOT NULL,
-	url_hash VARCHAR(50) NOT NULL,
-	url_domain TEXT NOT NULL,
-	share_hash VARCHAR(50) NOT NULL,
-	country VARCHAR(50) NOT NULL,
-	country_code VARCHAR(10) NOT NULL,
-	latitude DECIMAL NOT NULL,
-	longitude DECIMAL NOT NULL,
-	city VARCHAR(50) NOT NULL,
-	region VARCHAR(50) NOT NULL,
-	region_code VARCHAR(10) NOT NULL,
-	referring_domain TEXT NOT NULL,
-	referring_url TEXT NOT NULL,
-	user_agent TEXT NOT NULL
+	cname VARCHAR(50),
+	url TEXT,
+	url_hash VARCHAR(50),
+	url_domain TEXT,
+	share_hash VARCHAR(50),
+	country VARCHAR(50),
+	country_code VARCHAR(10),
+	latitude DECIMAL,
+	longitude DECIMAL,
+	city VARCHAR(50),
+	region VARCHAR(50),
+	region_code VARCHAR(10),
+	timezone VARCHAR(50),
+	referring_domain TEXT,
+	referring_url TEXT,
+	user_agent TEXT
 );
 CREATE INDEX bitly_created_at ON bitly (created_at);
-
