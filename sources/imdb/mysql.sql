@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS imdb (
-  interaction_id VARCHAR(64) PRIMARY KEY NOT NULL,
+  interaction_id VARCHAR(64) PRIMARY KEY,
   created_at DATETIME DEFAULT NULL,
   author_name TEXT DEFAULT NULL,
   author_link TEXT DEFAULT NULL,

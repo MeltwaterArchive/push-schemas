@@ -8,7 +8,7 @@ def sql_type(column,data_type):
     if data_type=='string':
       return 'TEXT'
     else:
-      return data_type
+      return data_type.upper()
 
   if re.search(r'^id$|_id$|_hash$|_type$|language$|_lang$|name$|^gender$|timezone$|location$|country$|source$',column):
     return 'VARCHAR(64)'
@@ -34,7 +34,7 @@ def get_create_statement(table,columns):
   datatypes=',\n  '.join(["%s %s %s" % (column,sql_type(column,data_type),nullability(column)) for (column,data_type) in columns])
   #indexes
   #indexes=',\n  '.join(["INDEX %s_%s_idx (%s)" % (table,column,column) for (column,ignore) in columns if column in index_columns])
-  indexes='\n'.join(["CREATE INDEX %s_%s_idx ON %s (%s)" % (table,column,table,column) for (column,ignore) in columns if column in index_columns])
+  indexes='\n'.join(["CREATE INDEX %s_%s_idx ON %s (%s);" % (table,column,table,column) for (column,ignore) in columns if column in index_columns])
 
   ddl='''
 CREATE TABLE %s (

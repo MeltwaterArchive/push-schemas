@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS topix (
-  interaction_id VARCHAR(64) PRIMARY KEY NOT NULL,
+  interaction_id VARCHAR(64) PRIMARY KEY,
   created_at TIMESTAMP DEFAULT NULL,
   author_name TEXT DEFAULT NULL,
   author_location TEXT DEFAULT NULL,

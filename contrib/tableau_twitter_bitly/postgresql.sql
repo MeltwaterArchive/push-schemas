@@ -1,7 +1,7 @@
 -- twitter_bitly_lite
 
 CREATE TABLE interaction (
-  interaction_id VARCHAR(64) PRIMARY KEY NOT NULL,
+  interaction_id VARCHAR(64) PRIMARY KEY,
   interaction_type VARCHAR(64) NOT NULL,
   created_at datetime NOT NULL,
   author_username VARCHAR(64) NULL,
@@ -144,7 +144,7 @@ CREATE INDEX old_tags_created_at_idx ON old_tags (created_at);
 
 
 CREATE TABLE raw (
-  interaction_id VARCHAR(64) PRIMARY KEY NOT NULL,
+  interaction_id VARCHAR(64) PRIMARY KEY,
   created_at datetime NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   subscription_id VARCHAR(64) NOT NULL,

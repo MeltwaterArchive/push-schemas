@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS klout (
-  interaction_id VARCHAR(64) PRIMARY KEY NOT NULL,
+  interaction_id VARCHAR(64) PRIMARY KEY,
   interaction_type VARCHAR(64) NOT NULL,
   created_at TIMESTAMP DEFAULT NULL,
   amplification INTEGER DEFAULT NULL,
