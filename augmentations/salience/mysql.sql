@@ -1,5 +1,6 @@
 CREATE TABLE IF NOT EXISTS salience_content_entities (
   interaction_id VARCHAR(64) NOT NULL,
+  interaction_type VARCHAR(50) NOT NULL,
   created_at DATETIME NOT NULL,
   name TEXT DEFAULT NULL,
   entity_type TEXT DEFAULT NULL,
@@ -12,10 +13,12 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 CREATE INDEX salience_content_entities_interaction_id_idx ON salience_content_entities (interaction_id);
+CREATE INDEX salience_content_entities_interaction_type_idx ON salience_content_entities (interaction_type);
 CREATE INDEX salience_content_entities_created_at_idx ON salience_content_entities (created_at);
 
 CREATE TABLE IF NOT EXISTS salience_content_topics (
   interaction_id VARCHAR(64) NOT NULL,
+  interaction_type VARCHAR(50) NOT NULL,
   created_at DATETIME DEFAULT NULL,
   name TEXT DEFAULT NULL,
   hits FLOAT DEFAULT NULL,
@@ -25,10 +28,12 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 CREATE INDEX salience_content_topics_interaction_id_idx ON salience_content_topics (interaction_id);
+CREATE INDEX salience_content_topics_interaction_type_idx ON salience_content_topics (interaction_type);
 CREATE INDEX salience_content_topics_created_at_idx ON salience_content_topics (created_at);
 
 CREATE TABLE IF NOT EXISTS salience_title_entities (
   interaction_id VARCHAR(64) NOT NULL,
+  interaction_type VARCHAR(50) NOT NULL,
   created_at DATETIME NOT NULL,
   name TEXT DEFAULT NULL,
   entity_type TEXT DEFAULT NULL,
@@ -41,10 +46,12 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 CREATE INDEX salience_title_entities_interaction_id_idx ON salience_title_entities (interaction_id);
+CREATE INDEX salience_title_entities_interaction_type_idx ON salience_title_entities (interaction_type);
 CREATE INDEX salience_title_entities_created_at_idx ON salience_title_entities (created_at);
 
 CREATE TABLE IF NOT EXISTS salience_title_topics (
   interaction_id VARCHAR(64) NOT NULL,
+  interaction_type VARCHAR(50) NOT NULL,
   created_at DATETIME DEFAULT NULL,
   name TEXT DEFAULT NULL,
   hits FLOAT DEFAULT NULL,
@@ -53,5 +60,6 @@ CREATE TABLE IF NOT EXISTS salience_title_topics (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
+CREATE INDEX salience_title_topics_interaction_type_idx ON salience_title_topics (interaction_type);
 CREATE INDEX salience_title_topics_interaction_id_idx ON salience_title_topics (interaction_id);
 CREATE INDEX salience_title_topics_created_at_idx ON salience_title_topics (created_at);
