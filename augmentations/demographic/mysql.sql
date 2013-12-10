@@ -19,7 +19,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
 CREATE INDEX demographic_interaction_id_idx ON demographic (interaction_id);
-CREATE INDEX demographic_interaction_id_idx ON demographic (interaction_type);
+CREATE INDEX demographic_interaction_type_idx ON demographic (interaction_type);
 CREATE INDEX demographic_created_at_idx ON demographic (created_at);
 
 
