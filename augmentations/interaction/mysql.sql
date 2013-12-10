@@ -2,10 +2,10 @@ CREATE TABLE IF NOT EXISTS interaction (
   interaction_id VARCHAR(64) NOT NULL,
   created_at DATETIME NOT NULL,
   created_at_unix INTEGER NOT NULL,
-  username text DEFAULT NULL,
+  username VARCHAR(255) DEFAULT NULL,
   is_retweet SMALLINT DEFAULT NULL,
-  twitter_lang text DEFAULT NULL,
-  first_tag text DEFAULT NULL,
+  twitter_lang VARCHAR(50) DEFAULT NULL,
+  first_tag VARCHAR(50) DEFAULT NULL,
   PRIMARY KEY (interaction_id)
 )
 ENGINE = InnoDB
@@ -14,11 +14,11 @@ COLLATE = utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS raw (
   interaction_id VARCHAR(64) NOT NULL,
-  subscription_id text NOT NULL,
-  csdl_hash text NOT NULL,
-  csdl_hash_type text NOT NULL,
+  subscription_id VARCHAR(64) NOT NULL,
+  csdl_hash VARCHAR(64) NOT NULL,
+  csdl_hash_type VARCHAR(50) NOT NULL,
   created_at timestamp NOT NULL,
-  interaction_type text NOT NULL,
+  interaction_type VARCHAR(50) NOT NULL,
   data TEXT NOT NULL,
   PRIMARY KEY (interaction_id, subscription_id)
 )
