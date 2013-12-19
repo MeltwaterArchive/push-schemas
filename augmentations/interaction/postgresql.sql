@@ -29,7 +29,7 @@ CREATE INDEX raw_created_at_idx ON raw (created_at);
 CREATE TABLE IF NOT EXISTS hashtags (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(50) NOT NULL,
-  created_at datetime NOT NULL,
+  created_at timestamp NOT NULL,
   hashtag VARCHAR(255) NULL
 );
 CREATE INDEX hashtags_interaction_id_idx ON hashtags (interaction_id);
@@ -40,7 +40,7 @@ CREATE INDEX hashtags_created_at_idx ON hashtags (created_at);
 CREATE TABLE IF NOT EXISTS mentions (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(50) NOT NULL,
-  created_at datetime NOT NULL,
+  created_at timestamp NOT NULL,
   mention VARCHAR(255) NULL
 );
 CREATE INDEX mentions_interaction_id_idx ON mentions (interaction_id);

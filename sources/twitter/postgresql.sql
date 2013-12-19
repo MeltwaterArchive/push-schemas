@@ -5,7 +5,7 @@ CREATE TABLE twitter (
   author_username VARCHAR(64) DEFAULT NULL,
   author_language VARCHAR(64) DEFAULT NULL,
   source VARCHAR(64) DEFAULT NULL,
-  interaction_link VARCHAR(255) DEFAULT NULL,
+  interaction_link TEXT DEFAULT NULL,
   followers_count INT DEFAULT NULL,
   user_description TEXT DEFAULT NULL,
   user_timezone VARCHAR(64) DEFAULT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE hashtags (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at TIMESTAMP NOT NULL,
-  hashtag VARCHAR(255) DEFAULT NULL
+  hashtag TEXT DEFAULT NULL
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
@@ -44,7 +44,7 @@ CREATE TABLE mentions (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at TIMESTAMP NOT NULL,
-  mention VARCHAR(255) DEFAULT NULL
+  mention TEXT DEFAULT NULL
 );
 CREATE INDEX mentions_interaction_id_idx ON mentions (interaction_id);
 CREATE INDEX mentions_interaction_type_idx ON mentions (interaction_type);

@@ -2,21 +2,21 @@ CREATE TABLE facebook (
   interaction_id VARCHAR(64) PRIMARY KEY,
   created_at TIMESTAMP NOT NULL,
   application VARCHAR(255) DEFAULT NULL,
-  author_avatar VARCHAR(255) DEFAULT NULL,
-  author_link VARCHAR(255) DEFAULT NULL,
+  author_avatar TEXT DEFAULT NULL,
+  author_link TEXT DEFAULT NULL,
   author_name VARCHAR(64) DEFAULT NULL,
   author_id VARCHAR(64) DEFAULT NULL,
-  caption VARCHAR(255) DEFAULT NULL,
-  icon VARCHAR(255) DEFAULT NULL,
+  caption TEXT DEFAULT NULL,
+  icon TEXT DEFAULT NULL,
   post_id VARCHAR(64) DEFAULT NULL,
   post_type VARCHAR(64) DEFAULT NULL,
   likes_count INT DEFAULT NULL,
-  link VARCHAR(255) DEFAULT NULL,
-  message VARCHAR(255) DEFAULT NULL,
+  link TEXT DEFAULT NULL,
+  message TEXT DEFAULT NULL,
   name VARCHAR(64) DEFAULT NULL,
-  picture VARCHAR(255) DEFAULT NULL,
+  picture TEXT DEFAULT NULL,
   source VARCHAR(64) DEFAULT NULL,
-  story VARCHAR(255) DEFAULT NULL
+  story TEXT DEFAULT NULL
 );
 CREATE INDEX facebook_created_at_idx ON facebook (created_at);
 

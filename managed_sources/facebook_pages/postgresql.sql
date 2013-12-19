@@ -4,11 +4,11 @@ CREATE TABLE IF NOT EXISTS facebook_page (
   type VARCHAR(50) DEFAULT NULL,
   id VARCHAR(255) DEFAULT NULL,
   name VARCHAR(255) DEFAULT NULL,
-  link VARCHAR(255) DEFAULT NULL,
+  link TEXT DEFAULT NULL,
   icon VARCHAR(255) DEFAULT NULL,
   message TEXT DEFAULT NULL,
   description TEXT DEFAULT NULL,
-  picture VARCHAR(255) DEFAULT NULL,
+  picture TEXT DEFAULT NULL,
   like_count INTEGER DEFAULT NULL
 );
 CREATE INDEX facebook_page_interaction_id_idx ON facebook_page (interaction_id);
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS facebook_page_page (
   name VARCHAR(255) DEFAULT NULL,
   username VARCHAR(50) DEFAULT NULL,
   category VARCHAR(50) DEFAULT NULL,
-  link VARCHAR(255) DEFAULT NULL
+  link TEXT DEFAULT NULL
 );
 CREATE INDEX facebook_page_page_interaction_id_idx ON facebook_page_page (interaction_id);
 CREATE INDEX facebook_page_page_created_at_idx ON facebook_page_page (created_at);
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS facebook_page_post (
   created_at TIMESTAMP DEFAULT NULL,
   id VARCHAR(64) DEFAULT NULL,
   type VARCHAR(50) DEFAULT NULL,
-  link VARCHAR(255) DEFAULT NULL,
+  link TEXT DEFAULT NULL,
   content TEXT DEFAULT NULL,
   post_created_at TIMESTAMP DEFAULT NULL
 );

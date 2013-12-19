@@ -2,10 +2,10 @@ CREATE TABLE IF NOT EXISTS links (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(50) NOT NULL,
   created_at TIMESTAMP DEFAULT NULL,
-  url VARCHAR(255) DEFAULT NULL,
+  url TEXT DEFAULT NULL,
   title VARCHAR(255) DEFAULT NULL,
   domain VARCHAR(255) DEFAULT NULL,
-  normalized_url VARCHAR(255) DEFAULT NULL,
+  normalized_url TEXT DEFAULT NULL,
   hops TEXT[] DEFAULT NULL
 );
 CREATE INDEX links_interaction_id_idx ON links (interaction_id);
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS links_meta (
   created_at TIMESTAMP DEFAULT NULL,
   charset VARCHAR(50) DEFAULT NULL,
   content_type VARCHAR(50) DEFAULT NULL,
-  description VARCHAR(255) DEFAULT NULL,
+  description TEXTDEFAULT NULL,
   language VARCHAR(50) DEFAULT NULL,
   keywords TEXT[] DEFAULT NULL
 );
@@ -32,9 +32,9 @@ CREATE TABLE IF NOT EXISTS links_meta_opengraph (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(50) NOT NULL,
   created_at TIMESTAMP DEFAULT NULL,
-  title VARCHAR(255) DEFAULT NULL,
-  url VARCHAR(255) DEFAULT NULL,
-  image VARCHAR(255) DEFAULT NULL,
+  title TEXT DEFAULT NULL,
+  url TEXTDEFAULT NULL,
+  image TEXT DEFAULT NULL,
   type VARCHAR(50) DEFAULT NULL,
   site_name VARCHAR(255) DEFAULT NULL
 );
@@ -47,18 +47,18 @@ CREATE TABLE IF NOT EXISTS links_meta_twitter (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(50) NOT NULL,
   created_at TIMESTAMP DEFAULT NULL,
-  title VARCHAR(255) DEFAULT NULL,
-  url VARCHAR(255) DEFAULT NULL,
-  description VARCHAR(255) DEFAULT NULL,
+  title TEXT DEFAULT NULL,
+  url TEXT DEFAULT NULL,
+  description TEXT DEFAULT NULL,
   card VARCHAR(50) DEFAULT NULL,
   site VARCHAR(255) DEFAULT NULL,
   creator VARCHAR(50) DEFAULT NULL,
-  image VARCHAR(255) DEFAULT NULL,
-  player VARCHAR(255) DEFAULT NULL,
+  image TEXT DEFAULT NULL,
+  player TEXT DEFAULT NULL,
   player_width INTEGER DEFAULT NULL,
   player_height INTEGER DEFAULT NULL,
-  player_stream VARCHAR(255) DEFAULT NULL,
-  player_stream_content_type VARCHAR(255) DEFAULT NULL
+  player_stream TEXT DEFAULT NULL,
+  player_stream_content_type TEXT DEFAULT NULL
 );
 CREATE INDEX links_meta_twitter_interaction_id_idx ON links_meta_twitter (interaction_id);
 CREATE INDEX links_meta_twitter_interaction_type_idx ON links_meta_twitter (interaction_type);
