@@ -22,7 +22,7 @@ CREATE TABLE interaction (
   twitter_id VARCHAR(64) NULL,
   geo_latitude double precision NULL,
   geo_longitude double precision NULL,
-  content text NULL,
+  content TEXT NULL,
   content_sentiment INT NULL,
   language VARCHAR(64) NULL,
   language_confidence INT NULL,
@@ -39,8 +39,8 @@ CREATE TABLE interaction (
   bitly_referring_domain VARCHAR(255) NULL,
   bitly_url_hash VARCHAR(64) NULL,
   bitly_share_hash VARCHAR(64) NULL,
-  bitly_url VARCHAR(255) NULL,
-  links_url_first VARCHAR(255) NULL,
+  bitly_url TEXT NULL,
+  links_url_first TEXT NULL,
   links_title_first VARCHAR(255) NULL
 );
 CREATE INDEX interaction_interaction_type_idx ON interaction (interaction_type);
@@ -74,8 +74,8 @@ CREATE TABLE links (
   interaction_type VARCHAR(64) NOT NULL,
   created_at timestamp NOT NULL,
   author_username VARCHAR(64) NULL,
-  url VARCHAR(255) NULL,
-  title VARCHAR(255) NULL,
+  url TEXT NULL,
+  title TEXT NULL,
   domain VARCHAR(255) NULL
 );
 CREATE INDEX links_interaction_id_idx ON links (interaction_id);
@@ -150,7 +150,7 @@ CREATE TABLE raw (
   subscription_id VARCHAR(64) NOT NULL,
   task_hash VARCHAR(64) NULL,
   task_type VARCHAR(64) NULL,
-  data text NULL
+  data TEXT NULL
 );
 CREATE INDEX raw_created_at_idx ON raw (interaction_type);
 CREATE INDEX raw_interaction_type_idx ON raw (created_at);
