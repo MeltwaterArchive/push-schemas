@@ -49,10 +49,7 @@ CREATE TABLE IF NOT EXISTS mentions (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(50) NOT NULL,
   created_at DATETIME NOT NULL,
-  mention VARCHAR(255) NULL,
-  INDEX mentions_interaction_id_idx (interaction_id),
-  INDEX mentions_interaction_type_idx (interaction_type),
-  INDEX mentions_created_at_idx (created_at)
+  mention VARCHAR(255) NULL
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
