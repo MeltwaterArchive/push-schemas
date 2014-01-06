@@ -36,10 +36,7 @@ CREATE TABLE IF NOT EXISTS hashtags (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(50) NOT NULL,
   created_at DATETIME NOT NULL,
-  hashtag VARCHAR(255) NULL,
-  INDEX hashtags_interaction_id_idx (interaction_id),
-  INDEX hashtags_interaction_type_idx (interaction_type),
-  INDEX hashtags_created_at_idx (created_at)
+  hashtag VARCHAR(255) NULL
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
