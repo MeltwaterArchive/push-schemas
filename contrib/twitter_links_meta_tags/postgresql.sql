@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS twitter (
   interaction_id VARCHAR(64) PRIMARY KEY,
   interaction_type VARCHAR(64) NOT NULL,
-  created_at DATETIME NOT NULL,
+  created_at TIMESTAMP NOT NULL,
   author_username VARCHAR(64) DEFAULT NULL,
   author_language VARCHAR(64) DEFAULT NULL,
   source VARCHAR(64) DEFAULT NULL,
@@ -29,7 +29,7 @@ CREATE INDEX twitter_created_at_idx ON twitter (created_at);
 CREATE TABLE IF NOT EXISTS links (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(50) NOT NULL,
-  created_at DATETIME DEFAULT NULL,
+  created_at TIMESTAMP DEFAULT NULL,
   url TEXT  DEFAULT NULL,
   title TEXT  DEFAULT NULL,
   domain TEXT  DEFAULT NULL,
@@ -43,7 +43,7 @@ CREATE INDEX links_created_at_idx ON links (created_at);
 CREATE TABLE IF NOT EXISTS links_meta (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(50) NOT NULL,
-  created_at DATETIME DEFAULT NULL,
+  created_at TIMESTAMP DEFAULT NULL,
   charset VARCHAR(50) DEFAULT NULL,
   content_type VARCHAR(50) DEFAULT NULL,
   description TEXT  DEFAULT NULL,
@@ -57,7 +57,7 @@ CREATE INDEX links_meta_created_at_idx ON links_meta (created_at);
 CREATE TABLE IF NOT EXISTS tag (
 	interaction_id VARCHAR(64) NOT NULL,
 	interaction_type VARCHAR(64) NOT NULL,
-	created_at DATETIME NOT NULL,
+	created_at TIMESTAMP NOT NULL,
 	namespace TEXT  NOT NULL,
 	score FLOAT NOT NULL,
 	label TEXT NOT NULL
