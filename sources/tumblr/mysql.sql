@@ -50,9 +50,10 @@ CREATE TABLE tumblr (
   track_name VARCHAR(64) NULL,
   post_type VARCHAR(64) NULL,
   url VARCHAR(255) NULL,
-  video_url VARCHAR(255) NULL,
+  video_url VARCHAR(255) NULL
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
+CREATE INDEX tumblr_interaction_id_idx ON tumblr (created_at);
 CREATE INDEX tumblr_created_at_idx ON tumblr (created_at);

@@ -50,6 +50,7 @@ CREATE TABLE tumblr (
   track_name VARCHAR(64) NULL,
   post_type VARCHAR(64) NULL,
   url TEXT NULL,
-  video_url TEXT NULL,
+  video_url TEXT NULL
 );
+CREATE INDEX tumblr_interaction_id_idx ON tumblr (created_at);
 CREATE INDEX tumblr_created_at_idx ON tumblr (created_at);
