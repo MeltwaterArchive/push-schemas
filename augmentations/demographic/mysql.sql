@@ -25,6 +25,7 @@ CREATE INDEX demographic_created_at_idx ON demographic (created_at);
 
 CREATE TABLE demographic_likes_and_interests (
   interaction_id VARCHAR(64) NOT NULL,
+  interaction_type VARCHAR(50) NOT NULL,
   created_at DATETIME NOT NULL,
   interest VARCHAR(255) DEFAULT NULL
 )
