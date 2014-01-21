@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS links_meta_opengraph (
   title TEXT DEFAULT NULL,
   url TEXTDEFAULT NULL,
   image TEXT DEFAULT NULL,
+  description TEXT DEFAULT NULL,
   type VARCHAR(50) DEFAULT NULL,
   site_name VARCHAR(255) DEFAULT NULL
 );
