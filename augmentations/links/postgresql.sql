@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS links_meta (
   charset VARCHAR(50) DEFAULT NULL,
   content_type VARCHAR(50) DEFAULT NULL,
   description TEXTDEFAULT NULL,
-  language VARCHAR(50) DEFAULT NULL,
+  lang VARCHAR(50) DEFAULT NULL,
   keywords TEXT[] DEFAULT NULL
 );
 CREATE INDEX links_meta_interaction_id_idx ON links_meta (interaction_id);
