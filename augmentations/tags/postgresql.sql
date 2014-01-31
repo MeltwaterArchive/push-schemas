@@ -2,8 +2,8 @@ CREATE TABLE tag_labels (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at DATETIME NOT NULL,
-  namespace VARCHAR(255) NOT NULL,
-  label VARCHAR(255) NOT NULL
+  namespace VARCHAR(255),
+  label VARCHAR(255)
 );
 CREATE INDEX tag_labels_interaction_id_idx ON HASHTAGS (INTERACTION_ID);
 CREATE INDEX tag_labels_interaction_type_idx ON HASHTAGS (INTERACTION_TYPE);
@@ -13,8 +13,8 @@ CREATE TABLE tag_scores (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at DATETIME NOT NULL,
-  namespace VARCHAR(255) NOT NULL,
-  score FLOAT NOT NULL
+  namespace VARCHAR(255),
+  score FLOAT
 );
 CREATE INDEX tag_scores_interaction_id_idx ON tag_scores (interaction_id);
 CREATE INDEX tag_scores_interaction_type_idx ON tag_scores (interaction_type);

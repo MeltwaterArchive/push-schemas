@@ -87,8 +87,8 @@ CREATE TABLE salience_entities (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at timestamp NOT NULL,
-  name VARCHAR(64) NOT NULL,
-  entity_type VARCHAR(64) NOT NULL,
+  name VARCHAR(64),
+  entity_type VARCHAR(64),
   sentiment INT NULL
 );
 CREATE INDEX salience_entities_interaction_id_idx ON salience_entities (interaction_id);
@@ -100,7 +100,7 @@ CREATE TABLE salience_topics (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at timestamp NOT NULL,
-  name VARCHAR(64) NOT NULL,
+  name VARCHAR(64),
   score double precision NULL
 );
 CREATE INDEX salience_topics_interaction_id_idx ON salience_topics (interaction_id);
@@ -112,8 +112,8 @@ CREATE TABLE tag_labels (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at timestamp NOT NULL,
-  namespace VARCHAR(255) NOT NULL,
-  label VARCHAR(255) NOT NULL
+  namespace VARCHAR(255),
+  label VARCHAR(255)
 );
 CREATE INDEX tag_labels_interaction_id_idx ON tag_labels (interaction_id);
 CREATE INDEX tag_labels_interaction_type_idx ON tag_labels (interaction_type);
@@ -124,8 +124,8 @@ CREATE TABLE tag_scores (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at timestamp NOT NULL,
-  namespace VARCHAR(255) NOT NULL,
-  score float NOT NULL
+  namespace VARCHAR(255),
+  score float
 );
 CREATE INDEX tag_scores_interaction_id_idx ON tag_scores (interaction_id);
 CREATE INDEX tag_scores_interaction_type_idx ON tag_scores (interaction_type);
@@ -136,7 +136,7 @@ CREATE TABLE old_tags (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at timestamp NOT NULL,
-  label VARCHAR(255) NOT NULL
+  label VARCHAR(255)
 );
 CREATE INDEX old_tags_interaction_id_idx ON old_tags (interaction_id);
 CREATE INDEX old_tags_interaction_type_idx ON old_tags (interaction_type);

@@ -58,9 +58,9 @@ CREATE TABLE IF NOT EXISTS tag (
 	interaction_id VARCHAR(64) NOT NULL,
 	interaction_type VARCHAR(64) NOT NULL,
 	created_at TIMESTAMP NOT NULL,
-	namespace TEXT  NOT NULL,
-	score FLOAT NOT NULL,
-	label TEXT NOT NULL
+	namespace TEXT,
+	score FLOAT,
+	label TEXT
 );
 CREATE INDEX tag_interaction_id_idx ON tag (interaction_id);
 CREATE INDEX tag_interaction_type_idx ON tag (interaction_type);

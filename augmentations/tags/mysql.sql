@@ -2,8 +2,8 @@ CREATE TABLE tag_labels (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at DATETIME NOT NULL,
-  namespace VARCHAR(255) NOT NULL,
-  label VARCHAR(255) NOT NULL
+  namespace VARCHAR(255),
+  label VARCHAR(255)
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
@@ -16,8 +16,8 @@ CREATE TABLE tag_scores (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at DATETIME NOT NULL,
-  namespace VARCHAR(255) NOT NULL,
-  score FLOAT NOT NULL
+  namespace VARCHAR(255),
+  score FLOAT
 )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8

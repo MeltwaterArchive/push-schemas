@@ -146,8 +146,8 @@ CREATE TABLE tag_scores (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at datetime NOT NULL,
-  namespace VARCHAR(255) NOT NULL,
-  score float NOT NULL,
+  namespace VARCHAR(255),
+  score float,
   INDEX tag_scores_interaction_id_idx (interaction_id),
   INDEX tag_scores_interaction_type_idx (interaction_type),
   INDEX tag_scores_created_at_idx (created_at)
@@ -161,7 +161,7 @@ CREATE TABLE old_tags (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(64) NOT NULL,
   created_at datetime NOT NULL,
-  label VARCHAR(255) NOT NULL,
+  label VARCHAR(255),
   INDEX old_tags_interaction_id_idx (interaction_id),
   INDEX old_tags_interaction_type_idx (interaction_type),
   INDEX old_tags_created_at_idx (created_at)

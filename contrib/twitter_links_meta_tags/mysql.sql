@@ -67,9 +67,9 @@ CREATE TABLE IF NOT EXISTS tag (
 	interaction_id VARCHAR(64) NOT NULL,
 	interaction_type VARCHAR(64) NOT NULL,
 	created_at DATETIME NOT NULL,
-	namespace VARCHAR(255) NOT NULL,
-	score FLOAT NOT NULL,
-	label VARCHAR(255) NOT NULL
+	namespace VARCHAR(255),
+	score FLOAT,
+	label VARCHAR(255)
 )
 COLLATE='utf8_general_ci'
 ENGINE=InnoDB;
