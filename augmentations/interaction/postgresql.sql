@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS interaction (
   interaction_type VARCHAR(50) NOT NULL,
   created_at timestamp NOT NULL,
   created_at_unix INTEGER NOT NULL,
+  name text DEFAULT NULL, 
   username text DEFAULT NULL,
   is_retweet SMALLINT DEFAULT NULL,
   twitter_lang VARCHAR(50) DEFAULT NULL,
