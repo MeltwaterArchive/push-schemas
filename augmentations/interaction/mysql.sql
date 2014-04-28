@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS interaction (
   interaction_id VARCHAR(64) NOT NULL,
   interaction_type VARCHAR(50) NOT NULL,
+  content TEXT DEFAULT NULL,
   created_at DATETIME NOT NULL,
   created_at_unix INTEGER NOT NULL,
   username VARCHAR(255) DEFAULT NULL,
