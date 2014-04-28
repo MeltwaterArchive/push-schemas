@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS interaction (
   content TEXT DEFAULT NULL,
   created_at timestamp NOT NULL,
   created_at_unix INTEGER NOT NULL,
+  name text DEFAULT NULL, 
   username text DEFAULT NULL,
   is_retweet SMALLINT DEFAULT NULL,
   twitter_lang VARCHAR(50) DEFAULT NULL,
