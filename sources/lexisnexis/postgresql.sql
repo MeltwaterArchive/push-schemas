@@ -18,6 +18,7 @@ CREATE TABLE lexisnexis_article (
   type TEXT DEFAULT NULL,
   title TEXT DEFAULT NULL,
   content TEXT DEFAULT NULL,
+  len INT DEFAULT NULL,
   byline TEXT DEFAULT NULL
 );
 CREATE INDEX lexisnexis_article_interaction_id_idx ON lexisnexis_article (interaction_id);
