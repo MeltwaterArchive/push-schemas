@@ -51,9 +51,9 @@ CREATE TABLE IF NOT EXISTS instagram_images (
   low_resolution_url VARCHAR(255) DEFAULT NULL,
   low_resolution_width INTEGER DEFAULT NULL,
   low_resolution_height INTEGER DEFAULT NULL,
-  thumbnail_resolution_url VARCHAR(255) DEFAULT NULL,
-  thumbnail_resolution_width INTEGER DEFAULT NULL,
-  thumbnail_resolution_height INTEGER DEFAULT NULL,
+  thumbnail_url VARCHAR(255) DEFAULT NULL,
+  thumbnail_width INTEGER DEFAULT NULL,
+  thumbnail_height INTEGER DEFAULT NULL,
   standard_resolution_url VARCHAR(255) DEFAULT NULL,
   standard_resolution_width INTEGER DEFAULT NULL,
   standard_resolution_height INTEGER DEFAULT NULL
