@@ -1,9 +1,6 @@
 CREATE TABLE focus (
   interaction_id VARCHAR(64) NOT NULL,
   created_at DATETIME NOT NULL,
-  content_categories VARCHAR(64) DEFAULT NULL,
-  title_categories VARCHAR(64) DEFAULT NULL,
-  parent_categories VARCHAR(64) DEFAULT NULL,
   content_levels_level1 VARCHAR(64) DEFAULT NULL,
   content_levels_level2 VARCHAR(64) DEFAULT NULL,
   content_levels_level3 VARCHAR(64) DEFAULT NULL,
