@@ -17,5 +17,5 @@ CREATE TABLE focus (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 COLLATE = utf8_general_ci;
-CREATE INDEX lexisnexis_interaction_id_idx ON lexisnexis (interaction_id);
-CREATE INDEX lexisnexis_created_at_idx ON lexisnexis (created_at);
+CREATE INDEX focus_interaction_id_idx ON focus (interaction_id);
+CREATE INDEX focus_created_at_idx ON focus (created_at);
