@@ -52,5 +52,16 @@ CREATE TABLE tumblr (
   url TEXT NULL,
   video_url TEXT NULL
 );
-CREATE INDEX tumblr_interaction_id_idx ON tumblr (created_at);
+CREATE INDEX tumblr_interaction_id_idx ON tumblr (interaction_id);
 CREATE INDEX tumblr_created_at_idx ON tumblr (created_at);
+
+
+CREATE TABLE hashtags (
+  interaction_id VARCHAR(64) NOT NULL,
+  interaction_type VARCHAR(64) NOT NULL,
+  created_at TIMESTAMP NOT NULL,
+  hashtag TEXT DEFAULT NULL
+);
+CREATE INDEX hashtags_interaction_id_idx ON hashtags (interaction_id);
+CREATE INDEX hashtags_interaction_type_idx ON hashtags (interaction_type);
+CREATE INDEX hashtags_created_at_idx ON hashtags (created_at);
