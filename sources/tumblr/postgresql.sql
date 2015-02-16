@@ -54,3 +54,17 @@ CREATE TABLE tumblr (
 );
 CREATE INDEX tumblr_interaction_id_idx ON tumblr (created_at);
 CREATE INDEX tumblr_created_at_idx ON tumblr (created_at);
+
+
+CREATE TABLE hashtags (
+  interaction_id VARCHAR(64) NOT NULL,
+  interaction_type VARCHAR(64) NOT NULL,
+  created_at TIMESTAMP NOT NULL,
+  hashtag TEXT DEFAULT NULL
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+CREATE INDEX hashtags_interaction_id_idx ON hashtags (interaction_id);
+CREATE INDEX hashtags_interaction_type_idx ON hashtags (interaction_type);
+CREATE INDEX hashtags_created_at_idx ON hashtags (created_at);
