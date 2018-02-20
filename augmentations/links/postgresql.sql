@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS links_meta (
   created_at TIMESTAMP DEFAULT NULL,
   charset VARCHAR(50) DEFAULT NULL,
   content_type VARCHAR(50) DEFAULT NULL,
-  description TEXTDEFAULT NULL,
+  description TEXT DEFAULT NULL,
   lang VARCHAR(50) DEFAULT NULL,
   keywords TEXT[] DEFAULT NULL
 );
