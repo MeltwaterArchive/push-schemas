@@ -18,7 +18,7 @@ CREATE TABLE wikipedia (
   subtype TEXT NULL,
   diff_from TEXT NULL,
   diff_to TEXT NULL,
-  htmldiff TEXT NULL,
+  htmldiff TEXT NULL
 );
 CREATE INDEX wikipedia_created_at_idx ON wikipedia (created_at);
 
@@ -61,9 +61,7 @@ CREATE INDEX wikipedia_diff_added_created_at_idx ON wikipedia_diff_added (create
 CREATE TABLE wikipedia_diff_removed (
   interaction_id VARCHAR(64) NOT NULL,
   created_at TIMESTAMP NOT NULL,
-  removed TEXT NULL,
-  INDEX wikipedia_diff_removed_interaction_id_idx (interaction_id),
-  INDEX wikipedia_diff_removed_created_at_idx (created_at)
+  removed TEXT NULL
 );
 CREATE INDEX wikipedia_diff_removed_interaction_id_idx ON wikipedia_diff_removed (interaction_id);
 CREATE INDEX wikipedia_diff_removed_created_at_idx ON wikipedia_diff_removed (created_at);
